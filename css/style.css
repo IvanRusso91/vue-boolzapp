@@ -30,14 +30,179 @@ main{
 .box-chat{
   position: absolute;
   display: flex;
-  width: 70%;
+  width: 80%;
   height:700px; /* da cancellare */
   margin-top: -100px;
-  margin-left: 15%;
+  margin-left: 10%;
   background-color: rgb(0, 204, 255);
 
 }
 
+
+/* main col-left */
+/* main head col-left */
+
+
+div.col-left{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 100%;/* da cancellare */
+  background-color: rgb(255, 255, 255); /* da cancellare*/
+}
+
+div.head-left,
+div.head-right{
+  display: flex;
+ background-color: rgb(234,234,234);
+}
+
+div.head-left img,
+div.head-right img{
+  width: 45px;
+  border-radius: 50%;
+  margin: 10px;
+}
+
+div.head-left p,
+div.head-right p{
+  display: inline-block;
+  margin-top: 25px;
+}
+
+.head-box-right{
+  display: flex;
+  justify-content: end;
+  margin-top: -43px;
+}
+
+.head-box-right i{
+  margin-right: 20px;
+  font-size: 1.5rem;
+  color: rgb(170, 170, 170);
+  cursor: pointer;
+}
+
+.head-box-right i:hover,
+.icone-note i:hover,
+.foot-box-right i:hover{
+  color: black;
+}
+
+/* /main head col-left */
+/* suono notifiche */
+
+.icone-note{
+  margin-top: 19px;
+  padding: 15px 0px 15px 15px;
+  background-color: rgb(142, 218, 252);
+  
+}
+
+.icone-note p{
+  display: inline-block;
+  
+}
+
+.icone-note h6{
+  margin-left: 70px;
+  margin-top: -13px;
+  text-decoration: underline;
+  color: rgb(76, 116, 133);
+
+}
+
+.icone-note i {
+  padding: 15px 13px;
+  border-radius: 50%;
+  color: rgb(142, 218, 252);
+  background-color: white;
+  margin-right: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* /suono notifiche */
+/* btn e barra ricerca */
+
+.control-bar{
+  margin: 5px;
+}
+
+.control-bar .btn:hover{
+  background-color: rgb(230, 230, 230);
+}
+
+
+.control-bar .btn{
+  background-color: white;
+  padding: 8px 25px;
+  border: 1px solid  rgb(230, 230, 230);
+  cursor: pointer;
+
+}
+
+.control-bar input{
+  width: calc(100% - 70.33px);
+  padding: 8px;
+  border: 1px solid  rgb(230, 230, 230);
+  cursor: pointer;
+}
+/* /btn e barra ricerca */
+
+
+
+/* /main col-left */
+/* /main col-right */
+/* main head col-left */
+
+div.col-right{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  height: 100%;/* da cancellare */
+  background-image: url(../img/mine.jpg);
+  background-position: center;
+  background-size: center;
+  border-left: 1px solid rgb(200, 200, 200);
+}
+
+/* /main head col-left */
+/* main chat col-right */
+
+.main-box-right{
+  height: 100%;
+}
+
+/* /main chat col-right */
+/* footer chat col-right */
+
+.foot-box-right{
+  display: flex;
+  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(243, 238, 234);
+
+}
+
+.foot-box-right input{
+  width: 80%;
+  padding: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.foot-box-right i{
+  padding: 30px;
+  color: rgb(170, 170, 170);
+  font-size: 1.5rem;
+  cursor: pointer;
+
+}
+
+/* /footer col-right */
+/* /main col-right */
 /* /MAIN */
 
 
