@@ -1,0 +1,45 @@
+/* GENERAL */
+
+*{
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body{
+  position: relative;
+}
+
+/* /GENERAL */
+/* HEADER */
+
+header{
+  background-color: rgb(0, 150, 136);
+  height: 150px;
+}
+
+
+/* /HEADER */
+/* MAIN */
+
+main{
+  background-color: rgb(219, 219, 212);
+  height: calc(100vh - 150px);
+}
+
+.box-chat{
+  position: absolute;
+  display: flex;
+  width: 70%;
+  height:700px; /* da cancellare */
+  margin-top: -100px;
+  margin-left: 15%;
+  background-color: rgb(0, 204, 255);
+
+}
+
+/* /MAIN */
+
+
+
+
