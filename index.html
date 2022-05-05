@@ -18,7 +18,7 @@
   <header></header>
 
   <!-- main avente solo il colore di sfondo e la box di chat -->
-  <main>
+  <main id="app">
     <div class="box-chat">
 
       <!-- colonna sinistra -->
@@ -55,13 +55,14 @@
         <!-- main utenti + card da ciclare-->
         <div class="box-users">
 
-          <div class="utente">
+          <div class="utente" 
+               v-for="(user, index) in utenti">
             <div class="card">
-              <img src="img/avatar_1.jpg" alt="avatar_1">
+              <img :src="'img/avatar'+ user.avatar +'.jpg'" :alt="avatar + user.avatar">
             </div>
             
             <div class="name-ora">
-              <p>Michele</p>
+              <p>{{user.name}}</p>
               <h6>12:00</h6>
             </div>
             <h6>Ultimo messaggio inviato</h6>

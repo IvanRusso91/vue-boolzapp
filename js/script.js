@@ -166,6 +166,10 @@ const app= new Vue({
               }
           ],
       }
-  ]
-  }    
+  ],
+
+  counterUser:0,
+  },
+  
+
 });
