@@ -106,8 +106,7 @@
                 <small>{{mex.date}}</small>
               </div>
             </div>
-  
-
+            
           </div>
           
         </div>
@@ -119,7 +118,7 @@
             <i class="fa-solid fa-face-smile"></i>
           </div>
 
-          <input type="text" placeholder="Scrivi un messaggio">
+          <input type="text" placeholder="Scrivi un messaggio" v-model.trim="stampMessage" @keyup.enter="aggiungiMex()">
 
           <div>
             <i class="fa-solid fa-microphone"></i>
