@@ -6,34 +6,19 @@
   box-sizing: border-box;
 }
 
-body{
-  position: relative;
-}
-
-/* /GENERAL */
-/* HEADER */
-
-header{
-  background-color: rgb(0, 150, 136);
-  height: 150px;
-}
-
-/* /HEADER */
-/* MAIN */
-
-main{
-  background-color: rgb(219, 219, 212);
-  height: calc(100vh - 150px);
+.sfondo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to bottom,
+ rgb(0, 150, 136) 17vh,rgb(219, 219, 212) 0vh);
 }
 
 .box-chat{
-  position: absolute;
   display: flex;
   width: 80%;
-  height:700px; /* da cancellare */
-  margin-top: -110px;
-  margin-left: 10%;
-  background-color: rgb(0, 204, 255);
+  height:700px; 
 }
 
 /* main col-left */
@@ -43,19 +28,24 @@ div.col-left{
   display: flex;
   flex-direction: column;
   width: 40%;
-  height: 100%;/* da cancellare */
-  background-color: rgb(255, 255, 255); /* da cancellare*/
+  background-color: rgb(255, 255, 255);
+}
+
+div.box-head{
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(234,234,234);
 }
 
 div.head-left,
 div.head-right{
+  width: 50%;
   display: flex;
- background-color: rgb(234,234,234);
 }
 
+
 div.head-left img,
-div.head-right img,
-div.utente img{
+div.head-right img{
   width: 45px;
   border-radius: 50%;
   margin: 10px;
@@ -65,12 +55,15 @@ div.head-left p,
 div.head-right p{
   display: inline-block;
   margin-top: 25px;
+  
 }
 
 .head-box-right{
-  display: flex;
-  justify-content: end;
-  margin-top: -43px;
+  width: 50%;
+  display: flex  ;
+  padding-top: 22px;
+  justify-content: flex-end;
+
 }
 
 .head-box-right i{
@@ -90,7 +83,6 @@ div.head-right p{
 /* suono notifiche */
 
 .icone-note{
-  margin-top: 19px;
   padding: 15px 0px 15px 15px;
   background-color: rgb(142, 218, 252);
   
@@ -147,65 +139,97 @@ div.head-right p{
 /* /btn e barra ricerca */
 /* main col-left */
 
-.box-users{
-  min-height: 200px;
+
+div .box-users{
   overflow: auto;
 }
 
+.utente{
+  border-bottom: 1px solid  rgb(230, 230, 230);
+}
+
 .card{
-  border-bottom: 1px solid  rgb(230, 230, 230);;
+  padding: 10px;
 }
 
-.box-users img{
-  margin-top: -20px;
-  
+.utente:hover{
+  background-color: rgb(240, 240, 240);
 }
 
-.name-ora{
-  display: flex;
-  justify-content: space-between;
-  margin-top: -60px;
+div.card img{
+  float: left; 
+  width: 50px;
+  border-radius: 50%;
+  margin-right: 10px; 
 }
 
-.name-ora p{
-  margin-left: 70px;
-  margin-top: 5px;
+.card-name{
+  padding-bottom: 10px;
 }
 
-.name-ora h6{
+.orario{
+  float: right;
   margin-right: 15px;
-  padding-top: 10px;
-  color: rgb(190, 190, 190);
+  color:  rgb(210, 210, 210);
+  font-size: 0.8rem;
 }
 
-.utente h6{
-  display: flex;
-  margin-left: 70px;
-  color: rgb(190, 190, 190);
-  margin-top: -10px;
-  margin-bottom: 20px;
+.card-name small{
+  color:  rgb(210, 210, 210);
 }
-
-
-/* /main col-right */
-/* main head col-left */
+/* /main col-left */
+/* main head col-right */
 
 div.col-right{
   display: flex;
   flex-direction: column;
   width: 60%;
-  height: 100%;/* da cancellare */
   background-image: url(../img/mine.jpg);
   background-position: center;
   background-size: center;
   border-left: 1px solid rgb(200, 200, 200);
 }
 
-/* /main head col-left */
+/* /main head col-right */
 /* main chat col-right */
 
 .main-box-right{
   height: 100%;
+  overflow: auto;
+
+}
+
+div .main-box{
+  margin: 50px;
+}
+
+div .sent{
+  background-color: rgb(204, 249, 181);
+  float: right;
+}
+
+div .received{
+  background-color: white;
+  float: left;
+}
+
+div .message{
+  padding: 10px;
+  border-radius: 10px;
+  margin: 15px 0px;
+  clear: both;
+  max-width: 70%;
+  min-width: 40%;
+}
+
+div .text-message{
+  padding: 10px;
+  
+}
+
+div .text-message small{
+  float: right;
+  margin-top: 5px;
 }
 
 /* /main chat col-right */
@@ -217,6 +241,7 @@ div.col-right{
   justify-content: center;
   align-items: center;
   background-color: rgb(243, 238, 234);
+  
 
 }
 

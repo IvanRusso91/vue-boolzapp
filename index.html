@@ -14,25 +14,24 @@
 </head>
 <body>
 
-  <!-- header solo per il colore di sfondo -->
-  <header></header>
-
   <!-- main avente solo il colore di sfondo e la box di chat -->
-  <main id="app">
+  <main id="app" class="sfondo">
     <div class="box-chat">
 
       <!-- colonna sinistra -->
       <!-- head della colonna -->
       <div class="col-left">
-        <div class="head-left">
-          <img src="img/avatar_io.jpg" alt="io">
-          <p>Sofia</p>
-        </div>
-        
-        <div class="head-box-right">
-          <i class="fa-solid fa-circle-notch"></i>
-          <i class="fa-solid fa-message"></i>
-          <i class="fa-solid fa-ellipsis-vertical"></i>
+        <div class="box-head">
+          <div class="head-left">
+            <img src="img/avatar_io.jpg" alt="io">
+            <p>Sofia</p>
+          </div>
+
+          <div class="head-box-right">
+            <i class="fa-solid fa-circle-notch"></i>
+            <i class="fa-solid fa-message"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
         </div>
         <!-- /head della colonna -->
         
@@ -55,17 +54,20 @@
         <!-- main utenti + card da ciclare-->
         <div class="box-users">
 
-          <div class="utente" 
-               v-for="(user, index) in utenti">
+          <div class="utente  "v-for="(user, index) in utenti" 
+               >
             <div class="card">
               <img :src="'img/avatar'+ user.avatar +'.jpg'" :alt="avatar + user.avatar">
             </div>
             
-            <div class="name-ora">
-              <p>{{user.name}}</p>
-              <h6>12:00</h6>
+            <div class="card-name">
+              <h3>
+                <span>{{user.name}}</span>
+                <span class="orario">12:00</span>
+              </h3>
+              <small>Ultimo messaggio inviato</small>
             </div>
-            <h6>Ultimo messaggio inviato</h6>
+            
           </div>
           
         </div>
@@ -77,21 +79,43 @@
       <!-- head della colonna -->
 
       <div class="col-right">
-        <div class="head-right">
-          <img src="img/avatar_io.jpg" alt="io">
-          <p>Sofia</p>
-        </div>
+        
+        <div class="box-head">
+          <div class="head-right">
+            <img src="img/avatar_io.jpg" alt="io">
+            <p>Sofia</p>
+          </div>
 
-        <div class="head-box-right">
-          <i class="fa-solid fa-magnifying-glass"></i></i>
-          <i class="fa-solid fa-paperclip"></i>
-          <i class="fa-solid fa-ellipsis-vertical"></i>
+          <div class="head-box-right">
+            <i class="fa-solid fa-magnifying-glass"></i></i>
+            <i class="fa-solid fa-paperclip"></i>
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+          </div>
         </div>
         <!-- /head della colonna -->
 
         <!-- main dei messaggi -->
         <div class="main-box-right">
 
+          <div class="main-box">
+
+            <div class="message received">
+              <div class="text-message">
+                <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, officia? Distinctio placeat cupiditate eum, architecto molestiae quod autem? Quaerat, veniam eos iure et repudiandae quia dignissimos in aliquam architecto deserunt.</h4>
+                <small>00/00/0000 12:00</small>
+              </div>
+            </div>
+  
+            <div class="message  sent">
+              <div class="text-message">
+                <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, officia? Distinctio placeat cupiditate eum, architecto molestiae quod autem?.</h4>
+                <small>00/00/0000 12:00</small>
+              </div>
+            </div>
+  
+
+          </div>
+          
         </div>
         <!-- /main dei messaggi -->
 
