@@ -154,6 +154,7 @@ div .box-users{
 
 .utente:hover{
   background-color: rgb(240, 240, 240);
+  cursor: pointer;
 }
 
 div.card img{
@@ -230,6 +231,10 @@ div .text-message{
 div .text-message small{
   float: right;
   margin-top: 5px;
+}
+
+.chat-off{
+  display: none;
 }
 
 /* /main chat col-right */

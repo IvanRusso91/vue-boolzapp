@@ -54,10 +54,11 @@
         <!-- main utenti + card da ciclare-->
         <div class="box-users">
 
-          <div class="utente  "v-for="(user, index) in utenti" 
+          <div class="utente  "v-for="(user, index) in users" 
+               @click="mostraChat(index), user.visible = !user.visible "
                >
             <div class="card">
-              <img :src="'img/avatar'+ user.avatar +'.jpg'" :alt="avatar + user.avatar">
+              <img :src="'img/avatar'+ user.avatar +'.jpg'" >
             </div>
             
             <div class="card-name">
@@ -82,8 +83,8 @@
         
         <div class="box-head">
           <div class="head-right">
-            <img src="img/avatar_io.jpg" alt="io">
-            <p>Sofia</p>
+            <img :src="'img/avatar'+ users[chatAttiva].avatar +'.jpg'" alt="io">
+            <p>{{users[chatAttiva].name}}</p>
           </div>
 
           <div class="head-box-right">
@@ -97,19 +98,12 @@
         <!-- main dei messaggi -->
         <div class="main-box-right">
 
-          <div class="main-box">
+          <div class="main-box " v-for="(mex,index) in users[chatAttiva].messages" :class="{'chat-off' : users.visible}" >
 
-            <div class="message received">
+            <div class="message " :class="mex.status">
               <div class="text-message">
-                <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, officia? Distinctio placeat cupiditate eum, architecto molestiae quod autem? Quaerat, veniam eos iure et repudiandae quia dignissimos in aliquam architecto deserunt.</h4>
-                <small>00/00/0000 12:00</small>
-              </div>
-            </div>
-  
-            <div class="message  sent">
-              <div class="text-message">
-                <h4>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates, officia? Distinctio placeat cupiditate eum, architecto molestiae quod autem?.</h4>
-                <small>00/00/0000 12:00</small>
+                <h4>{{mex.message}}</h4>
+                <small>{{mex.date}}</small>
               </div>
             </div>
   

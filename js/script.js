@@ -4,7 +4,7 @@ const app= new Vue({
   el:'#app',
 
   data:{
-    utenti : [
+    users : [
       {
           name: 'Michele',
           avatar: '_1',
@@ -168,8 +168,17 @@ const app= new Vue({
       }
   ],
 
-  counterUser:0,
+  chatAttiva: 0,
+   
   },
-  
+
+  methods:{
+      mostraChat(index){
+        this.chatAttiva = index;
+        console.log(this.chatAttiva = index);
+      },
+
+    
+  },
 
 });
