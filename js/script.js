@@ -178,20 +178,48 @@ const app= new Vue({
             console.log(this.chatAttiva = index);
         },
 
+        
+
         aggiungiMex(){
             
-            let nMsg = this.stampMessage;
             let newText= {
-                date: '',
-                message: nMsg,
+                date: dayjs().format('DD/MM/YYYY HH:mm:ss'),
+                message: this.stampMessage,
                 status: 'sent'
             };
 
             this.users[this.chatAttiva].messages.push(newText);
             this.stampMessage= '';
+            
+        },
+        
+        risposta(){
+            const risp = {
+                date: '10/01/2020 15:51:00',
+                message: 'OK!!',
+                status: 'received'
+            };
+            
+            setTimeout(()=>{
+                this.users[this.chatAttiva].messages.push(risp);
+            }, 3000)
+           
+        },
 
+        getLastMessage(index){
+            const user = this.users[index];
+            const messages = user.messages;
+            const LastMessage =messages[messages.length - 1];
+            return LastMessage.message;
+        },
+
+        getLastDate(index){
+            const user = this.users[index];
+            const messages = user.messages;
+            const LastMessage =messages[messages.length - 1];
+            return LastMessage.date;
         }
-    
+                          
     },
 
 });

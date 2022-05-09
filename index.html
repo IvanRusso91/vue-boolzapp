@@ -6,6 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- JS data -->
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/dayjs.min.js"></script>
+  <!-- JS location -->
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.2/locale/it.js"></script>
   
   <link rel="stylesheet" href="css/style.css"/>
   <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
@@ -54,7 +58,9 @@
         <!-- main utenti + card da ciclare-->
         <div class="box-users">
 
-          <div class="utente  "v-for="(user, index) in users" 
+          <div class="utente"
+               :class="{'active' : chatAttiva === index}"  
+               v-for="(user, index) in users" 
                @click="mostraChat(index), user.visible = !user.visible "
                >
             <div class="card">
@@ -64,9 +70,9 @@
             <div class="card-name">
               <h3>
                 <span>{{user.name}}</span>
-                <span class="orario">12:00</span>
+                <span class="orario">{{getLastDate(index)}}</span>
               </h3>
-              <small>Ultimo messaggio inviato</small>
+              <small>{{getLastMessage(index)}}</small>
             </div>
             
           </div>
@@ -102,7 +108,7 @@
 
             <div class="message " :class="mex.status">
               <div class="text-message">
-                <h4>{{mex.message}}</h4>
+                <h5>{{mex.message}}</h5>
                 <small>{{mex.date}}</small>
               </div>
             </div>
@@ -118,7 +124,7 @@
             <i class="fa-solid fa-face-smile"></i>
           </div>
 
-          <input type="text" placeholder="Scrivi un messaggio" v-model.trim="stampMessage" @keyup.enter="aggiungiMex()">
+          <input type="text" placeholder="Scrivi un messaggio" v-model.trim="stampMessage" @keyup.enter="aggiungiMex(), risposta()">
 
           <div>
             <i class="fa-solid fa-microphone"></i>

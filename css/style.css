@@ -157,6 +157,10 @@ div .box-users{
   cursor: pointer;
 }
 
+.utente.active{
+  background-color: rgb(240, 240, 240);
+}
+
 div.card img{
   float: left; 
   width: 50px;
