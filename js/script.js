@@ -207,14 +207,6 @@ const app= new Vue({
            
         },
 
-        searchName(user, index){
-            let inputBar = this.search;
-            if(user.name.slice(0, inputBar.length - 1)){
-                user.visible = false;
-            }
-           
-        },
-
         searchUser(){
             this.users.forEach(user=> {
                 if(user.name.toLowerCase().includes(this.search.toLowerCase())){
