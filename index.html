@@ -49,9 +49,9 @@
 
         <!-- btn + barra di ricerca -->
         <div class="control-bar">
-          <button class="btn"><i class="fa-solid fa-magnifying-glass"></i>
+          <button class="btn"><i class="fa-solid fa-magnifying-glass " ></i>
             </button>
-          <input type="text" placeholder="Cerca o inizia una nuova Chat">
+          <input type="text" placeholder="Cerca o inizia una nuova Chat" v-model.trim="search" @keyup.enter="searchUser()">
         </div>
         <!-- /btn + barra di ricerca -->
 
@@ -61,7 +61,8 @@
           <div class="utente"
                :class="{'active' : chatAttiva === index}"  
                v-for="(user, index) in users" 
-               @click="mostraChat(index), user.visible = !user.visible "
+               v-show="user.visible"
+               @click="mostraChat(index) "
                >
             <div class="card">
               <img :src="'img/avatar'+ user.avatar +'.jpg'" >

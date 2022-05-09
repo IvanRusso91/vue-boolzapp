@@ -170,15 +170,16 @@ const app= new Vue({
 
         chatAttiva: 0,
         stampMessage:'',
+        search: '',
+
     },
 
     methods:{
         mostraChat(index){
             this.chatAttiva = index;
-            console.log(this.chatAttiva = index);
+            // console.log(this.chatAttiva = index);
         },
 
-        
 
         aggiungiMex(){
             
@@ -206,6 +207,23 @@ const app= new Vue({
            
         },
 
+        searchName(user, index){
+            let inputBar = this.search;
+            if(user.name.slice(0, inputBar.length - 1)){
+                user.visible = false;
+            }
+           
+        },
+
+        searchUser(){
+            this.users.forEach(user=> {
+                if(user.name.toLowerCase().includes(this.search.toLowerCase())){
+                    user.visible =true;
+                }
+                   
+            });
+        },
+
         getLastMessage(index){
             const user = this.users[index];
             const messages = user.messages;
@@ -219,7 +237,9 @@ const app= new Vue({
             const LastMessage =messages[messages.length - 1];
             return LastMessage.date;
         }
-                          
+      
+        
     },
 
 });
+
